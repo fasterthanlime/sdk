@@ -37,3 +37,10 @@ operator implicit as (s: String) -> CString {
 operator implicit as (c: CString) -> String {
     String new(c, c length)
 }
+
+// compiler hook, for compatibility with rock..
+
+makeStringLiteral: func (data: CString, length: SizeT) -> String {
+    String new(data, length)
+}
+
