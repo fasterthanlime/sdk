@@ -1,4 +1,6 @@
 
+include stdbool, stdint, stddef
+
 /**
  * objects
  */
@@ -65,13 +67,12 @@ Class: abstract class {
 
 // basic types
 
-include stdbool, stdint, stddef
-
 Void: cover from void
 Pointer: cover from Void*
 Bool: cover from bool
 SizeT: cover from size_t
-UInt8: cover from uint8_t
+UInt8: cover from unsigned char
+Int8: cover from char
 
 /**
  * Closures

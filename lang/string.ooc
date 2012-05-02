@@ -3,7 +3,7 @@ import libc/[stdio, string]
 
 // bare-bones C string
 
-CString: cover from UInt8* {
+CString: cover from Int8* {
 
     length: SizeT {
         get {
@@ -23,7 +23,7 @@ String: class {
     init: func (=data, =length)
 
     println: func {
-        printf("%s", data)
+        printf("%s\n", data)
     }
 
 }
@@ -37,10 +37,3 @@ operator implicit as (s: String) -> CString {
 operator implicit as (c: CString) -> String {
     String new(c, c length)
 }
-
-// compiler hook
-
-makeStringLiteral: func (data: CString, length: SizeT) -> String {
-    String new(data, length)
-}
-
