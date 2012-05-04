@@ -1,5 +1,5 @@
 
-import libc/[stdio, string]
+include stdio, string
 
 // bare-bones C string
 
@@ -23,7 +23,7 @@ String: class {
     init: func (=data, =length)
 
     println: func {
-        printf("%s\n", data)
+        printf("%s\n" data, data)
     }
 
 }

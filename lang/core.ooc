@@ -63,11 +63,10 @@ Class: abstract class {
         false
     }
 
-    forCover: static func (instanceSize, size: SizeT, super: Class) -> Class {
+    forCover: static func (instanceSize, size: SizeT) -> Class {
         _class := Memory alloc(Class size) as Class
         _class instanceSize = instanceSize
         _class size = size
-        _class super = super
         _class
     }
 
